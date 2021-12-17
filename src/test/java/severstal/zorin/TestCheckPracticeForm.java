@@ -1,6 +1,5 @@
 package severstal.zorin;
 
-import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -10,7 +9,6 @@ import java.io.File;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selectors.byId;
 import static com.codeborne.selenide.Selenide.*;
 
 
@@ -24,6 +22,7 @@ public class TestCheckPracticeForm {
     @Test
     void testCheckPracticeForm() {
         open("https://demoqa.com/automation-practice-form");
+
         //Writting
         $("#firstName").setValue("Boris");
         $("#lastName").setValue("Blade");
@@ -58,8 +57,6 @@ public class TestCheckPracticeForm {
                 text("FirstJob.jpg"),
                 text("Voronezh, Blade Street, 10"),
                 text("NCR Gurgaon"));
-
-
     }
 
     @AfterEach
