@@ -29,8 +29,4 @@ public class Car {
                 + modelRevision + "\n Automatic transmission - " + automaticTransmission
                 + "\n Color - " + color);
     }
-
-    public void getColor() {
-        System.out.println("Color " + color);
-    }
 }

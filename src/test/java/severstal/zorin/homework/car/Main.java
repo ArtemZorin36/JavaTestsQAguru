@@ -1,5 +1,8 @@
 package severstal.zorin.homework.car;
 
+import java.security.SecureRandom;
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -10,9 +13,15 @@ public class Main {
         myCar.setColor("red");
 
         Wheels round = new Wheels("round");
-        Wheels squer = new Wheels("Squer");
+        Wheels square = new Wheels("square");
+        Wheels rhombus = new Wheels("rhombus");
+        Wheels rectangle = new Wheels("rectangle");
 
-        myCar.wheels(round);
+        var random = new SecureRandom();
+        var list = Arrays.asList(round, square, rhombus, rectangle);
+        var randomElement = list.get(random.nextInt(list.size()));
+
+        myCar.wheels(randomElement);
         myCar.showCar();
 
 
