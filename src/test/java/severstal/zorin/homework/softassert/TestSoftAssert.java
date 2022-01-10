@@ -1,6 +1,7 @@
 package severstal.zorin.homework.softassert;
 
 import com.codeborne.selenide.Configuration;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +13,6 @@ public class TestSoftAssert {
 
     @BeforeAll
     static void beforeAll() {
-        clearBrowserCookies();
         Configuration.browserSize = "1980x1280";
         Configuration.holdBrowserOpen = false;
     }
@@ -25,5 +25,10 @@ public class TestSoftAssert {
         $("[data-filterable-for=wiki-pages-filter]").shouldHave(text("SoftAssertions"));
         $("[data-filterable-for='wiki-pages-filter']").$(byText("SoftAssertions")).click();
         $(".markdown-body").shouldHave(text("Using JUnit5 extend test class"));
+    }
+
+    @AfterEach
+    void after(){
+        closeWebDriver();
     }
 }

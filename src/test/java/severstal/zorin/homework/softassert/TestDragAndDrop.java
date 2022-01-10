@@ -1,6 +1,7 @@
 package severstal.zorin.homework.softassert;
 
 import com.codeborne.selenide.Configuration;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -11,7 +12,6 @@ public class TestDragAndDrop {
 
     @BeforeAll
     static void beforeAll() {
-        clearBrowserCookies();
         Configuration.browserSize = "1980x1280";
         Configuration.holdBrowserOpen = false;
     }
@@ -22,5 +22,10 @@ public class TestDragAndDrop {
         $("#column-a").dragAndDropTo("#column-b");
         $("#column-a").shouldHave(text("b"));
         $("#column-b").shouldHave(text("a"));
+    }
+
+    @AfterEach
+    void after(){
+        closeWebDriver();
     }
 }

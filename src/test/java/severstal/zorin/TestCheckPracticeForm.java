@@ -15,7 +15,6 @@ import static com.codeborne.selenide.Selenide.*;
 public class TestCheckPracticeForm {
     @BeforeAll
     static void beforeAll() {
-        clearBrowserCookies();
         Configuration.browserSize = "1980x1280";
         Configuration.holdBrowserOpen = false;
     }
