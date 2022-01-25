@@ -29,6 +29,7 @@ repositories {
 dependencies {
     testImplementation(
             'com.codeborne:selenide:6.1.2',
+            "io.qameta.allure:allure-selenide:2.17.2",
             "org.junit.jupiter:junit-jupiter:5.8.2",
             "com.github.javafaker:javafaker:1.0.2",
             'org.assertj:assertj-core:3.22.0',
@@ -42,6 +43,17 @@ dependencies {
             'org.slf4j:slf4j-simple:1.7.32')
 }
 
+tasks.withType(Test) {
+    useJUnitPlatform()
+
+    testLogging {
+        lifecycle {
+//            events "started", "failed"
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
+    }
+}
 test {
     useJUnitPlatform()
 }
