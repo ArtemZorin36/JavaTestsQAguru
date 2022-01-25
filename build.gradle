@@ -55,5 +55,7 @@ tasks.withType(Test) {
     }
 }
 test {
-    useJUnitPlatform()
+    useJUnitPlatform {
+        includeTags 'HW9'
+    }
 }
