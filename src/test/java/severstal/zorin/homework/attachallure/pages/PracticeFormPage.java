@@ -90,11 +90,11 @@ public class PracticeFormPage {
         return this;
     }
 
-    @Step("Загрузка фотографии")
-    public PracticeFormPage uploadPicture(String fileName) {
-        uploadPicture.uploadFromClasspath(fileName);
-        return this;
-    }
+//    @Step("Загрузка фотографии")
+//    public PracticeFormPage uploadPicture(String fileName) {
+//        uploadPicture.uploadFromClasspath(fileName);
+//        return this;
+//    }
 
     @Step("Выбираем адрес")
     public PracticeFormPage setStudentAddress(String address) {
@@ -137,7 +137,7 @@ public class PracticeFormPage {
                 .setBirthDate(studentModel.getBirthDate())
                 .setStudentSubjects(studentModel.getSubjects())
                 .selectHobbies(studentModel.getHobbies())
-                .uploadPicture(studentModel.getPicture())
+//                .uploadPicture(studentModel.getPicture())
                 .setStudentAddress(studentModel.getCurrentAddress())
                 .setStudentState(studentModel.getState())
                 .setStudentCity(studentModel.getCity());
@@ -172,7 +172,7 @@ public class PracticeFormPage {
 
         assertEquals(studentModel.getSubjects().toString().replaceAll(regex, ""), submitFormModel.getSubjects());
         assertEquals(studentModel.getHobbies().toString().replaceAll(regex, ""), submitFormModel.getHobbies());
-        assertEquals(studentModel.getPicture(), submitFormModel.getPicture());
+//        assertEquals(studentModel.getPicture(), submitFormModel.getPicture());
         assertEquals(studentModel.getCurrentAddress(), submitFormModel.getAddress());
         assertEquals(studentModel.getState() + " " + studentModel.getCity(), submitFormModel.getStateAndCity());
     }
