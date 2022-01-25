@@ -14,13 +14,13 @@ import java.util.List;
 
 import static severstal.zorin.homework.pageobject.TestData.*;
 
+@Tag("HW9")
 public class TestCheckPracticeForm extends TestBase {
 
         PracticeFormPage practiceFormPage = new PracticeFormPage();
         StudentModel studentModel = new StudentModel();
 
         @Test
-        @Tag("HW9")
         @Owner("ArtemZorin36")
         @DisplayName("Тест заполнения формы регистрации студента")
         @Severity(SeverityLevel.BLOCKER)
