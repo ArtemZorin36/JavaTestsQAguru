@@ -18,7 +18,7 @@ public class TestBase {
         baseUrl = "https://demoqa.com";
         String browser = System.getProperty("browser", "chrome");
         String version = System.getProperty("version", "91");
-        String remoteUrl = System.getProperty("remoteUrl", "selenoid.autotests.cloud/wd/hub1");
+        String remoteUrl = System.getProperty("remoteUrl", "selenoid.autotests.cloud/wd/hub");
         String login = System.getProperty("login", "user1");
         String pass = System.getProperty("pass", "1234");
 
