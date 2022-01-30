@@ -18,9 +18,6 @@ public class TestBase {
         browserSize = "1920x1080";
         browser = System.getProperty("browser");
         browserVersion = System.getProperty("browserVersion");
-        String login = System.getProperty("login");
-        String password = System.getProperty("password");
-        String remote = System.getProperty("remote");
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
