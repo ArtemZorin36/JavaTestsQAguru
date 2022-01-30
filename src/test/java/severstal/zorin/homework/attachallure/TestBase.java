@@ -21,7 +21,6 @@ public class TestBase {
         String login = System.getProperty("login");
         String password = System.getProperty("password");
         String remote = System.getProperty("remote");
-        remote = "https://" + login + ":" + password + "@selenoid.autotests.cloud/wd/hub";
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
