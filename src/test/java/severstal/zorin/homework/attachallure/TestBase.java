@@ -14,10 +14,14 @@ public class TestBase {
     @BeforeAll
     @Step("Настройки браузера")
     static void beforeAll() {
-        browserSize = "1980x1280";
-        holdBrowserOpen = false;
         baseUrl = "https://demoqa.com";
-        remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        browserSize = "1920x1080";
+        browser = System.getProperty("browser");
+        browserVersion = System.getProperty("browserVersion");
+        String login = System.getProperty("login");
+        String password = System.getProperty("password");
+        String remote = System.getProperty("remote");
+        remote = "https://" + login + ":" + password + "@selenoid.autotests.cloud/wd/hub";
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
