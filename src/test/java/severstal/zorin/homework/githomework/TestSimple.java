@@ -16,4 +16,10 @@ public class TestSimple {
         Assertions.assertEquals(1,1);
         System.out.println("This is simple test");
     }
+
+    @Test
+    static void simpleTest3() {
+        Assertions.assertEquals(1,1);
+        System.out.println("This is simple test");
+    }
 }
