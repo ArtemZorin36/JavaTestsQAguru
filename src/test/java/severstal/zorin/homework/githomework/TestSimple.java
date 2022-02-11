@@ -1,8 +1,10 @@
 package severstal.zorin.homework.githomework;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
+@Tag("HW")
 public class TestSimple {
 
     @Test

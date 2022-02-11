@@ -61,3 +61,8 @@ test {
         includeTags 'HW9'
     }
 }
+test {
+    useJUnitPlatform {
+        includeTags 'HW'
+    }
+}

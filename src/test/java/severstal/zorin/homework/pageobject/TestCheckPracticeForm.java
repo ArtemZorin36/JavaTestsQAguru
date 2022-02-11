@@ -1,6 +1,7 @@
 package severstal.zorin.homework.pageobject;
 
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import severstal.zorin.homework.pageobject.pages.PracticeFormPage;
 import severstal.zorin.homework.pageobject.pages.StudentModel;
@@ -10,6 +11,7 @@ import java.util.List;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static severstal.zorin.homework.pageobject.TestData.*;
 
+@Tag("HW")
 public class TestCheckPracticeForm extends TestBase {
 
         PracticeFormPage practiceFormPage = new PracticeFormPage();

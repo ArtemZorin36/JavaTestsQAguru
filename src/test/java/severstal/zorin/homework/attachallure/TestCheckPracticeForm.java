@@ -14,6 +14,7 @@ import java.util.List;
 
 import static severstal.zorin.homework.pageobject.TestData.*;
 
+@Tag("HW")
 @Tag("HW9")
 public class TestCheckPracticeForm extends TestBase {
 
