@@ -1,14 +1,11 @@
 package severstal.zorin.homework.parametrized;
 
-import com.codeborne.selenide.Condition;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.CsvSource;
-import org.junit.jupiter.params.provider.MethodSource;
-import org.junit.jupiter.params.provider.ValueSource;
+import org.junit.jupiter.params.provider.*;
 
 import java.util.stream.Stream;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
@@ -21,7 +18,7 @@ public class TestParametrizedAndAnnotations {
         open("https://www.github.com");
         $(".header-search-input").click();
         $(".header-search-input").setValue(TestData).pressEnter();
-        $(".repo-list").shouldHave(Condition.text(TestData));
+        $(".repo-list").shouldHave(text(TestData));
     }
 
 
@@ -35,7 +32,7 @@ public class TestParametrizedAndAnnotations {
         open("https://www.github.com");
         $(".header-search-input").click();
         $(".header-search-input").setValue(TestData).pressEnter();
-        $(".repo-list").shouldHave(Condition.text(expectedResult));
+        $(".repo-list").shouldHave(text(expectedResult));
     }
 
 
@@ -52,7 +49,20 @@ public class TestParametrizedAndAnnotations {
         open("https://www.github.com");
         $(".header-search-input").click();
         $(".header-search-input").setValue(TestData).pressEnter();
-        $(".repo-list").shouldHave(Condition.text(expectedResult));
+        $(".repo-list").shouldHave(text(expectedResult));
     }
 
-}
+    enum Users {
+        asolntsev, svasenkov;
+    }
+
+    @ParameterizedTest(name = "Тестирование общего алгоритма с тестовыми данными: {0} ")
+    @EnumSource(Users.class)
+        void testWithEnumSource(Users users) {
+            open("https://www.github.com");
+            $(".header-search-input").click();
+            $(".header-search-input").setValue(String.valueOf(users)).pressEnter();
+            $(".repo-list").shouldHave(text(String.valueOf(users)));
+        }
+        }
+
